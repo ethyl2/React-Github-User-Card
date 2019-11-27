@@ -97,3 +97,14 @@ p {
   color: #0C83FC;
   font-style: italic;
 }
+@media (max-width: 600px) {
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .imgContainer, .card header, .card .cardBody {
+    width: 100%;
+  }
+}

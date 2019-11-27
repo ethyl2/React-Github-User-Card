@@ -11,8 +11,8 @@ class UserCard extends Component {
                 <header>
                     {this.props.user.name? <h2>{this.props.user.name}</h2> : null}
                     <h3>{this.props.user.login}</h3> 
-                    {this.props.user.bio? <p>{this.props.user.bio}</p> : null}
-                    {this.props.user.company? <p>{this.state.user.company}</p>: null}
+                    {this.props.user.bio? <p className='bioInfo'>{this.props.user.bio}</p> : null}
+                    {this.props.user.company? <p>{this.props.user.company}</p>: null}
                     {this.props.user.location? <p>Location: {this.props.user.location}</p> : null}
                 </header>
                 <div className='cardBody'>

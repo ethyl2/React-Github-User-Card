@@ -12,7 +12,12 @@ h1, h2 {
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
+  overflow-wrap: break-word;
+}
+
+h2.subheading {
+  margin: 2rem;
 }
 
 h3 {
@@ -73,6 +78,11 @@ p {
   flex-flow: column nowrap;
   justify-content: space-between;
   background: #77BAFC;
+  padding: 0.15rem;
+}
+
+.card header .bioInfo {
+  color: #5C5C5C;
 }
 
 .card .cardBody {

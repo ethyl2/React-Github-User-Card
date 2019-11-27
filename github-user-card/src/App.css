@@ -1,22 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display|Oswald&display=swap');
+
 .App {
   text-align: center;
+  font-family: 'Oswald', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
+h1, h2 {
+  font-family: 'Major Mono Display', monospace;
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  font-size: 1.25rem;
+  padding: 0;
+  margin: 0;
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 1rem 0;
 }
 
-.App-link {
-  color: #09d3ac;
+.card {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  width: 90%;
+  margin: 1rem auto;
+  background: #E1E4E8;
+  transition: all .35s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.imgContainer {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgContainer img {
+  max-width: 100%;
+  -webkit-filter: grayscale(1); 
+  filter: grayscale(1);
+  border: 4px solid #036AD2; 
+}
+
+.card header {
+  width: 37%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  background: #77BAFC;
+}
+
+.card .cardBody {
+  width: 37%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.card .cardBody a {
+  display: block;
+  text-decoration: none;
+  color: #036AD2;
+}
+
+.card .cardBody a:visited {
+  color: #0251A0;
+}
+
+.card .cardBody a:hover {
+  color: #0C83FC;
+  font-style: italic;
 }

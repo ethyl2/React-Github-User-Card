@@ -3,7 +3,8 @@ import './App.css';
 import axios from 'axios';
 import UserCard from './components/UserCard';
 import FollowerCard from './components/FollowerCard';
-import GitHubCalendar from 'react-github-calendar'
+import GitHubCalendar from 'react-github-calendar';
+import ReactTooltip from 'react-tooltip';
 
 
 class App extends Component {
@@ -81,7 +82,9 @@ class App extends Component {
         <p>{this.state.lookupMessage}</p>
 
         <UserCard user={this.state.user} />
-        <GitHubCalendar username={this.state.username} color="hsl(203, 82%, 33%)" />
+        <GitHubCalendar username={this.state.username} color="hsl(203, 82%, 33%)">
+          <ReactTooltip delayShow={50} html />
+        </GitHubCalendar>
         <hr />
         <h2 className='subheading'>Followers:</h2> 
         {this.state.followers.map(follower => {

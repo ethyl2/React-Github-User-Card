@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios';
 import UserCard from './components/UserCard';
 import FollowerCard from './components/FollowerCard';
+import GitHubCalendar from 'react-github-calendar'
 
 
 class App extends Component {
@@ -31,7 +32,7 @@ class App extends Component {
       axios.get(`https://api.github.com/users/${this.state.username}`)
       .then(response => {
         //console.log(response);
-        this.setState({...this.state, lookupMessage: 'Found user'});
+        //this.setState({...this.state, lookupMessage: 'Found user'});
         this.setState({...this.state, user: response.data})
       })
       .catch(err => {
@@ -80,6 +81,8 @@ class App extends Component {
         <p>{this.state.lookupMessage}</p>
 
         <UserCard user={this.state.user} />
+        <GitHubCalendar username={this.state.username} color="hsl(203, 82%, 33%)" />
+        <hr />
         <h2 className='subheading'>Followers:</h2> 
         {this.state.followers.map(follower => {
           return (

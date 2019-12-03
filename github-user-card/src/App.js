@@ -18,15 +18,22 @@ class App extends Component {
     }
   }
 
-  submitUser = (event)  => {
-    event.preventDefault();
-    let submittedUser = event.target.newUser.value;
-    console.log('in submitUser');
-    console.log(submittedUser);
-    //console.log(event.target.newUser.value);
-    this.setState({...this.state, username: submittedUser});
+  componentDidMount() {
+    axios.get(`https://api.github.com/users/${this.state.username}`)
+    .then(response => {
+      //console.log(response);
+      this.setState({...this.state, user: response.data})
+    })
+    .catch(err => console.log(err));
+
+    axios.get(`https://api.github.com/users/${this.state.username}/followers`)
+      .then(response => {
+        //console.log(response);
+        this.setState({...this.state, followers: response.data})
+      })
+      .catch(err => console.log(err));
   }
-  
+
   componentDidUpdate(prevProps, prevState) {
     if (prevState.username !== this.state.username) {
       console.log('in componentDidUpdate');
@@ -49,23 +56,16 @@ class App extends Component {
         .catch(err => console.log(err));
     }
   }
-  
-  componentDidMount() {
-    axios.get(`https://api.github.com/users/${this.state.username}`)
-    .then(response => {
-      //console.log(response);
-      this.setState({...this.state, user: response.data})
-    })
-    .catch(err => console.log(err));
 
-    axios.get(`https://api.github.com/users/${this.state.username}/followers`)
-      .then(response => {
-        //console.log(response);
-        this.setState({...this.state, followers: response.data})
-      })
-      .catch(err => console.log(err));
+  submitUser = (event)  => {
+    event.preventDefault();
+    let submittedUser = event.target.newUser.value;
+    console.log('in submitUser');
+    console.log(submittedUser);
+    //console.log(event.target.newUser.value);
+    this.setState({...this.state, username: submittedUser});
   }
-
+  
   render() {
     
     return (

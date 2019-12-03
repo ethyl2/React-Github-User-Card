@@ -19,7 +19,7 @@ class FollowerCard extends Component {
         .catch(err=> console.log(err));
     }
 
-    render() { 
+    render() {
         return (
             <UserCard user={this.state.follower} />
         )
